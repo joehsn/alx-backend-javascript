@@ -1,5 +1,11 @@
 export class HolbertonClass {
   constructor(year, location) {
+    if (typeof year !== 'number') {
+      throw new Error('TypeError: Year must be a number');
+    }
+    if (typeof location !== 'string') {
+      throw new Error('TypeError: Location must be a string');
+    }
     this._year = year;
     this._location = location;
   }
@@ -15,6 +21,15 @@ export class HolbertonClass {
 
 export class StudentHolberton {
   constructor(firstName, lastName, holbertonClass) {
+    if (typeof firstName !== 'string') {
+      throw new Error('TypeError: Firstname must be a string');
+    }
+    if (typeof lastname !== 'string') {
+      throw new Error('TypeError: Lastname must be a string');
+    }
+    if (!(holbertonClass instanceof HolbertonClass)) {
+      throw new Error('TypeError: class must be an instance if HolbertonClass');
+    }
     this._firstName = firstName;
     this._lastName = lastName;
     this._holbertonClass = holbertonClass; // Properly assign holbertonClass here
