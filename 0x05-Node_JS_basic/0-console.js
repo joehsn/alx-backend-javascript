@@ -1,3 +1,4 @@
+const process = require("process");
 /**
  * A function that prints in STDOUT the string argument.
  * @param {String} msg
@@ -5,7 +6,7 @@
  */
 
 function displayMessage(msg) {
-    console.log(msg);
+    process.stdout.write(msg + "\n");
 };
 
 module.exports = displayMessage;
